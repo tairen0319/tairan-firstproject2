@@ -8,6 +8,7 @@ chrome.commands.onCommand.addListener(async (command) => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     if (!tab || !tab.id || !tab.url) {
       console.warn('アクティブなタブまたはURLが見つかりません');
+      await setBadge('ERR', '#f44336', tab?.id);
       return;
     }
 
@@ -40,17 +41,23 @@ chrome.commands.onCommand.addListener(async (command) => {
     });
 
     if (result?.success) {
-      await chrome.action.setBadgeText({ text: 'OK', tabId: tab.id });
-      await chrome.action.setBadgeBackgroundColor({ color: '#4caf50', tabId: tab.id });
-      setTimeout(() => chrome.action.setBadgeText({ text: '', tabId: tab.id }), 1200);
+      await setBadge('OK', '#4caf50', tab.id);
     } else {
       console.warn('コピーに失敗しました', result?.error);
-      await chrome.action.setBadgeText({ text: 'ERR', tabId: tab.id });
-      await chrome.action.setBadgeBackgroundColor({ color: '#f44336', tabId: tab.id });
-      setTimeout(() => chrome.action.setBadgeText({ text: '', tabId: tab.id }), 1500);
+      await setBadge('ERR', '#f44336', tab.id);
     }
   } catch (err) {
     console.error('copy-url command error:', err);
   }
 });
+
+async function setBadge(text, color, tabId) {
+  try {
+    await chrome.action.setBadgeText({ text, tabId });
+    await chrome.action.setBadgeBackgroundColor({ color, tabId });
+    setTimeout(() => chrome.action.setBadgeText({ text: '', tabId }), 1500);
+  } catch (e) {
+    console.warn('Badge update failed:', e);
+  }
+}
 

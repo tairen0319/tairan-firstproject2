@@ -9,6 +9,20 @@
   },
   "permissions": [
     "tabs",
-    "activeTab"
-  ]
+    "activeTab",
+    "scripting",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "copy-url": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C",
+        "mac": "Command+Shift+C"
+      },
+      "description": "現在のタブのURLをコピー"
+    }
+  }
 }

@@ -1,6 +1,20 @@
-# Chrome拡張機能
+# URLコピー拡張機能
 
-Chrome拡張機能のプロジェクトです。
+現在のページのURLをワンクリックでコピーできるChrome拡張機能です。
+
+## 機能
+
+- 現在開いているタブのURLを自動取得
+- ワンクリックでURLをクリップボードにコピー
+- コピー成功の視覚的フィードバック
+- モダンで使いやすいUI
+
+## 使い方
+
+1. 拡張機能をインストール後、ツールバーのアイコンをクリック
+2. ポップアップに現在のURLが表示されます
+3. 「URLをコピー」ボタンをクリック
+4. URLがクリップボードにコピーされます
 
 ## GitHub連携のセットアップ
 
@@ -45,3 +59,45 @@ git push -u origin main
 ## 開発
 
 このプロジェクトはChrome拡張機能の開発用テンプレートです。
+
+## 仮想環境のセットアップ
+
+このプロジェクトにはPython仮想環境が含まれています。
+
+### 仮想環境の有効化
+
+```bash
+# macOS/Linux
+source venv/bin/activate
+
+# Windows
+venv\Scripts\activate
+```
+
+### 仮想環境の無効化
+
+```bash
+deactivate
+```
+
+### パッケージのインストール
+
+仮想環境を有効化した後、必要なパッケージをインストールできます：
+
+```bash
+pip install パッケージ名
+```
+
+### requirements.txtの作成（推奨）
+
+インストールしたパッケージを記録する場合：
+
+```bash
+pip freeze > requirements.txt
+```
+
+### requirements.txtからインストール
+
+```bash
+pip install -r requirements.txt
+```

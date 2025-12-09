@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "URLコピー拡張機能",
+  "version": "1.0.0",
+  "description": "現在のページのURLをワンクリックでコピーできます",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "URLをコピー"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ]
+}

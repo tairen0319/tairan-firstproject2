@@ -1,52 +1,48 @@
-# OS関連
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-Desktop.ini
+# Python仮想環境
+.venv/
+venv/
+env/
+ENV/
 
-# エディタ関連
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.project
-.classpath
-.settings/
+# Pythonキャッシュ
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
 
-# Node.js関連（もし使用する場合）
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-package-lock.json
-yarn.lock
-
-# ビルド成果物
-dist/
+# ディストリビューション/パッケージ
+.Python
 build/
-*.zip
-*.crx
-*.pem
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints
 
 # 環境変数
 .env
 .env.local
-.env.*.local
 
-# ログファイル
-*.log
-logs/
+# OS
+.DS_Store
+Thumbs.db
 
-# 一時ファイル
-*.tmp
-*.temp
-.cache/
 
-# Chrome拡張機能のパッケージファイル
-*.crx
-*.pem

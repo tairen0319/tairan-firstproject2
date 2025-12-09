@@ -12,14 +12,24 @@
       <h1>URLコピー</h1>
     </header>
     <main>
+      <div class="title-display">
+        <label for="title-input">ページタイトル:</label>
+        <input type="text" id="title-input" readonly>
+      </div>
       <div class="url-display">
         <label for="url-input">現在のURL:</label>
         <input type="text" id="url-input" readonly>
       </div>
-      <button id="copy-btn" class="copy-button">
+      <div class="button-group">
+        <button id="copy-url-btn" class="copy-button">
         <span class="button-icon">📋</span>
         URLをコピー
-      </button>
+        </button>
+        <button id="copy-title-url-btn" class="copy-button secondary">
+          <span class="button-icon">📝</span>
+          タイトルとURLをコピー
+        </button>
+      </div>
       <div id="status" class="status"></div>
       <div id="debug-info" class="debug-info" style="display: none;">
         <small>デバッグ情報: <span id="debug-text"></span></small>
